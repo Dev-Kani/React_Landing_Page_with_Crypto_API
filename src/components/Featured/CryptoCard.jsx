@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FiArrowUp, FiArrowDown } from 'react-icons/fi'
 import axios from 'axios'
+import './Featured.css'
 
 const CryptoCard = () => {
 
@@ -14,11 +15,7 @@ const CryptoCard = () => {
         }).catch((err) => { console.log(err) })
     }, [])
 
-    console.log(data)
-
     if (!data) return null
-
-    // const { image, name, current_price, price_change_percentage_24h } = data[0]
 
     return (
         <>
@@ -33,8 +30,8 @@ const CryptoCard = () => {
                         <p>${current_price.toLocaleString()}</p>
                     </div>
                     {price_change_percentage_24h < 0 ? (
-                        <span className='red'><FiArrowDown />{price_change_percentage_24h.toFixed(2)}%</span>)
-                        : (<span className='green'><FiArrowUp />{data[0].price_change_percentage_24h.toFixed(2)}%</span>)
+                        <span className='red'><FiArrowDown className='icon' />{price_change_percentage_24h.toFixed(2)}%</span>)
+                        : (<span className='green'><FiArrowUp className='icon' />{data[0].price_change_percentage_24h.toFixed(2)}%</span>)
                     }
                 </div>
             })}
