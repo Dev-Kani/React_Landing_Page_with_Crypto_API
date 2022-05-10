@@ -1,4 +1,3 @@
-import { FiArrowUp, FiArrowDown } from 'react-icons/fi'
 import CryptoCard from './CryptoCard'
 import './Featured.css'
 
